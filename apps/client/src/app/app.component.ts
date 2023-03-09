@@ -17,7 +17,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3300', options: {} };
     <ufw-footer />
   `,
   styles: [],
-  imports: [RouterModule, HeaderComponent, FooterComponent, MainComponent, SocketIoModule.forRoot(config),],
+  imports: [RouterModule, HeaderComponent, FooterComponent, MainComponent],
 })
 export class AppComponent {
   title = 'client';
