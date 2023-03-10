@@ -5,13 +5,8 @@ import {
 } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-const config: SocketIoConfig = { url: 'ws://localhost:3333', options: {} };
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
-    { provide: SocketIoModule, useValue: config },
-  ],
+  providers: [provideRouter(appRoutes, withEnabledBlockingInitialNavigation())],
 }).catch((err) => console.error(err));

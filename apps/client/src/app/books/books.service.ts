@@ -15,3 +15,4 @@ export class BooksService {
     return this.socket.fromEvent('books');
   }
 }
+// https://www.joshmorony.com/creating-a-simple-live-chat-server-with-nestjs-websockets/

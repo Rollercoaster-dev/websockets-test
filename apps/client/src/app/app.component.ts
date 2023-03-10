@@ -4,7 +4,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { BooksService } from './books/books.service';
-
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'ws://localhost:3333', options: {} };
 @Component({
   standalone: true,
   selector: 'ufw-root',
@@ -14,7 +15,13 @@ import { BooksService } from './books/books.service';
     <ufw-footer />
   `,
   styles: [],
-  imports: [RouterModule, HeaderComponent, FooterComponent, MainComponent],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent,
+    SocketIoModule.forRoot(config),
+  ],
   providers: [BooksService],
 })
 export class AppComponent {
