@@ -7,7 +7,7 @@ import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:3300', options: {} };
+const config: SocketIoConfig = { url: 'ws://localhost:3333', options: {} };
 
 bootstrapApplication(AppComponent, {
   providers: [
